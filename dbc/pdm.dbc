@@ -1,0 +1,60 @@
+VERSION "PDM V1.0"
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+BS_:
+BU_: PDM VEHICLE_CONTROLLER DIAGNOSTIC_TOOL
+BO_ 256 PDM_Command: 8 VEHICLE_CONTROLLER
+ SG_ EFuse1_Request : 0|1@1+ (1,0) [0|1] "" PDM
+ SG_ EFuse2_Request : 1|1@1+ (1,0) [0|1] "" PDM
+ SG_ PC0_Request : 2|1@1+ (1,0) [0|1] "" PDM
+ SG_ PC1_Request : 3|1@1+ (1,0) [0|1] "" PDM
+ SG_ Emergency_Off : 7|1@1+ (1,0) [0|1] "" PDM
+ SG_ Command_Counter : 8|8@1+ (1,0) [0|255] "" PDM
+ SG_ Command_CRC : 56|8@1+ (1,0) [0|255] "" PDM
+BO_ 257 PDM_FaultReset: 8 DIAGNOSTIC_TOOL
+ SG_ Reset_EFuse1 : 0|1@1+ (1,0) [0|1] "" PDM
+ SG_ Reset_EFuse2 : 1|1@1+ (1,0) [0|1] "" PDM
+ SG_ Reset_System : 2|1@1+ (1,0) [0|1] "" PDM
+ SG_ Reset_Key : 8|16@1+ (1,0) [0|65535] "" PDM
+BO_ 512 PDM_Status: 8 PDM
+ SG_ EFuse1_Enabled : 0|1@1+ (1,0) [0|1] "" VEHICLE_CONTROLLER
+ SG_ EFuse2_Enabled : 1|1@1+ (1,0) [0|1] "" VEHICLE_CONTROLLER
+ SG_ PC0_Enabled : 2|1@1+ (1,0) [0|1] "" VEHICLE_CONTROLLER
+ SG_ PC1_Enabled : 3|1@1+ (1,0) [0|1] "" VEHICLE_CONTROLLER
+ SG_ Button1_Pressed : 4|1@1+ (1,0) [0|1] "" VEHICLE_CONTROLLER
+ SG_ Button2_Pressed : 5|1@1+ (1,0) [0|1] "" VEHICLE_CONTROLLER
+ SG_ CAN_Command_Valid : 6|1@1+ (1,0) [0|1] "" VEHICLE_CONTROLLER
+ SG_ System_Fault : 7|1@1+ (1,0) [0|1] "" VEHICLE_CONTROLLER
+ SG_ EFuse1_State : 8|8@1+ (1,0) [0|255] "" VEHICLE_CONTROLLER
+ SG_ EFuse2_State : 16|8@1+ (1,0) [0|255] "" VEHICLE_CONTROLLER
+ SG_ PDM_State : 24|8@1+ (1,0) [0|255] "" VEHICLE_CONTROLLER
+ SG_ Last_Command_Counter : 32|8@1+ (1,0) [0|255] "" VEHICLE_CONTROLLER
+ SG_ Alive_Counter : 40|8@1+ (1,0) [0|255] "" VEHICLE_CONTROLLER
+ SG_ Firmware_Major : 48|8@1+ (1,0) [0|255] "" VEHICLE_CONTROLLER
+ SG_ Firmware_Minor : 56|8@1+ (1,0) [0|255] "" VEHICLE_CONTROLLER
+BO_ 513 PDM_Currents: 8 PDM
+ SG_ EFuse1_Current : 0|16@1+ (0.001,0) [0|65.535] "A" VEHICLE_CONTROLLER
+ SG_ EFuse2_Current : 16|16@1+ (0.001,0) [0|65.535] "A" VEHICLE_CONTROLLER
+ SG_ EFuse1_PeakCurrent : 32|16@1+ (0.001,0) [0|65.535] "A" VEHICLE_CONTROLLER
+ SG_ EFuse2_PeakCurrent : 48|16@1+ (0.001,0) [0|65.535] "A" VEHICLE_CONTROLLER
+BO_ 514 PDM_Sensors: 8 PDM
+ SG_ Temperature1 : 0|16@1- (0.1,0) [-40|150] "degC" VEHICLE_CONTROLLER
+ SG_ Temperature2 : 16|16@1- (0.1,0) [-40|150] "degC" VEHICLE_CONTROLLER
+ SG_ Temperature3 : 32|16@1- (0.1,0) [-40|150] "degC" VEHICLE_CONTROLLER
+ SG_ SupplyVoltage : 48|16@1+ (0.001,0) [0|65.535] "V" VEHICLE_CONTROLLER
+BO_ 515 PDM_Faults: 8 PDM
+ SG_ EFuse1_Faults : 0|16@1+ (1,0) [0|65535] "" VEHICLE_CONTROLLER
+ SG_ EFuse2_Faults : 16|16@1+ (1,0) [0|65535] "" VEHICLE_CONTROLLER
+ SG_ System_Faults : 32|16@1+ (1,0) [0|65535] "" VEHICLE_CONTROLLER
+ SG_ NTC_Validity : 48|8@1+ (1,0) [0|255] "" VEHICLE_CONTROLLER
+ SG_ Fault_Counter : 56|8@1+ (1,0) [0|255] "" VEHICLE_CONTROLLER
+BO_ 516 PDM_Diagnostics: 8 PDM
+ SG_ CAN_RX_Count : 0|16@1+ (1,0) [0|65535] "" DIAGNOSTIC_TOOL
+ SG_ CAN_TX_Count : 16|16@1+ (1,0) [0|65535] "" DIAGNOSTIC_TOOL
+ SG_ CAN_Dropped : 32|16@1+ (1,0) [0|65535] "" DIAGNOSTIC_TOOL
+ SG_ Reset_Cause : 48|8@1+ (1,0) [0|255] "" DIAGNOSTIC_TOOL
+ SG_ Scheduler_Overruns : 56|8@1+ (1,0) [0|255] "" DIAGNOSTIC_TOOL
